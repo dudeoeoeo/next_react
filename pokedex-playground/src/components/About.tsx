@@ -3,8 +3,8 @@ import styled from "@emotion/styled/macro";
 
 import { Ability, Color, Type } from '../types';
 // import PokedexData from './PokedexData';
-// import Abilities from './Abilities';
 import { mapTypeToHex, mapColorToHex } from '../utils';
+import Abilities from './Abilities';
 
 const Base = styled.article`
   padding: 20px;
@@ -108,18 +108,18 @@ interface Props {
 }
 
 const About: React.FC<Props> = ({
-  isLoading,
-  isMythical,
-  isLegendary,
-  types,
-  weight,
-  flavorText,
-  growthRate,
-  genderRate,
-  color,
-  height,
-  baseExp,
-  abilities,
+    isLoading,
+    isMythical,
+    isLegendary,
+    types,
+    weight,
+    flavorText,
+    growthRate,
+    genderRate,
+    color,
+    height,
+    baseExp,
+    abilities,
   }) => {
   const rarity = isLegendary ? 'Legendary' : isMythical ? 'Mythical' : 'Normal';
 
@@ -172,7 +172,8 @@ const About: React.FC<Props> = ({
                 </InfoItem>
               </InfoContainer>
             </InfoContainerWrapper>
-            {/* {abilities && <Abilities abilities={abilities} color={color} />} */}
+            {abilities && <Abilities color={color} />}
+            {/* abilities={abilities} */}
           </>
         )
       }
