@@ -94,13 +94,13 @@ const InfoItemValue = styled.span<{ color: string }>`
 
 interface Props {
     isLoading: boolean,
-    isMythical: boolean,
-    isLegendary: boolean,
+    isMythical?: boolean,
+    isLegendary?: boolean,
     types?: Array<Type>,
     weight?: number,
     flavorText?: string,
-    growthRate?: string,
-    genderRate?: number,
+    growthRate?: number,
+    genderRate?: string,
     color?: Color,
     height?: number,
     baseExp?: number,
@@ -156,7 +156,7 @@ const About: React.FC<Props> = ({
                 </InfoItem>
                 <InfoItem>
                   <InfoItemLabel>Gender</InfoItemLabel>
-                  {genderRate && <InfoItemValue color={mapColorToHex(color?.name)}>{genderRate === -1 ? 'Unknown' : 'Male / Female'}</InfoItemValue>}
+                  {genderRate && <InfoItemValue color={mapColorToHex(color?.name)}>{genderRate === '-1' ? 'Unknown' : 'Male / Female'}</InfoItemValue>}
                 </InfoItem>
                 <InfoItem>
                   <InfoItemLabel>Growth Rate</InfoItemLabel>
@@ -172,7 +172,7 @@ const About: React.FC<Props> = ({
                 </InfoItem>
               </InfoContainer>
             </InfoContainerWrapper>
-            {abilities && <Abilities color={color} />}
+            {abilities && <Abilities color={color} abilities={abilities} />}
             {/* abilities={abilities} */}
           </>
         )
