@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import useLatestMovie from './useLatestMovie';
+import useUpcomingMovie from './useUpcomingMovie';
 import Card from '../../../components/Card';
-import Slider from 'react-slick';
+import Slider from '../../../components/Slider';
 
 const Base = styled.div`
   margin-bottom: 42px;
@@ -17,9 +17,9 @@ const Title = styled.h4`
 
 const UpcomingMovieSection: React.FC = () => {
     
-    const { data, isLoading } = useLatestMovie();
+    const { data, isLoading } = useUpcomingMovie();
 
-    const getYear = (date: string) => date.split('-')[0];
+    const getYear = (date: string) => date.split('-')[0] || '';
     
     return (
         <Base>

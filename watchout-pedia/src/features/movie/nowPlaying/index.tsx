@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import useLatestMovie from './useNowPlayingMovie';
 import Card from '../../../components/Card';
-import Slider from 'react-slick';
+import Slider from '../../../components/Slider';
 
 const Base = styled.div`
   margin-bottom: 42px;
